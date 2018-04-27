@@ -1,6 +1,7 @@
 /*
 	客户端连接播控的代码
 */
+var socket = null;
 $(function(){
 	setTimeout("linkSocket()",30);
 	setTimeout("linkSocket()",35000);
@@ -9,9 +10,8 @@ $(function(){
 // 连接操作
 function linkSocket(){
 	// 1.连接服务器
-	var socket = null;
 	socket = io.connect('http://localhost:1800'); // server ip
-	var mName = "192.168.1.106"; // local ip
+	var mName = "192.168.1.32"; // local ip
 	socket.emit('newUser', mName);
 
 	// 连接成功返回提示
@@ -33,26 +33,31 @@ function linkSocket(){
 	});
 }
 
+function btnClick(msg){
+	console.log(msg);
+	socket.emit("message",'192.168.1.11',msg);
+}
+
+
 function dealData(msg){
+	//0代表返回待机页面
 	console.log(msg);
 	switch(msg){
-		case "iframe1":
-			window.location.href='./iframe1.html';
-			break;
-		case "iframe2":
-			window.location.href='./iframe2.html';
+		case "page0":
+			$(".btn li").removeClass("currentLi");
+			$(".btn li").eq(0).addClass("currentLi");
 			break;
 		case "page1":
-			window.location.href='./page1.html';
+			$(".btn li").removeClass("currentLi");
+			$(".btn li").eq(1).addClass("currentLi");
 			break;
 		case "page2":
-			window.location.href='./page2.html';
+			$(".btn li").removeClass("currentLi");
+			$(".btn li").eq(2).addClass("currentLi");
 			break;
 		case "page3":
-			window.location.href='./page3.html';
-			break;
-		case "page4":
-			window.location.href='./page4.html';
+			$(".btn li").removeClass("currentLi");
+			$(".btn li").eq(3).addClass("currentLi");
 			break;
 		case "index":
 			window.location.href='./index.html';
@@ -64,8 +69,3 @@ function dealData(msg){
 };
 
 
-var ifTrue = function(){
-	$("._btnControl li ._nav").on("click", function() {
-
-	});
-};
