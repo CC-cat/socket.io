@@ -1,0 +1,117 @@
+/*呼吸效果*/
+
+@keyframes breathing {
+   0% {
+      transform-origin: center;
+      transform: scale(0);
+      opacity: 1;
+   }
+   50% {
+      transform-origin: center;
+      transform: scale(1);
+      opacity: 1;
+   }
+   100% {
+      transform-origin: center;
+      transform: scale(1);
+      opacity: 0;
+   }
+}
+
+/*透明度 渐变动画*/
+
+@keyframes opacity {
+   0% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
+}
+
+/*从小变大 中心*/
+
+@keyframes zoomIn {
+   0% {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+   }
+   50% {
+      opacity: 1;
+      visibility: visible;
+   }
+   100% {
+      visibility: visible;
+   }
+}
+
+/*从左侧进入*/
+
+@keyframes slideInLeft {
+   0% {
+      opacity: 0;
+      transform: translate3d(-100%, 0, 0);
+   }
+   100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+   }
+}
+
+/*从右侧进入*/
+
+@keyframes slideInRight {
+   0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+   }
+   100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+   }
+}
+
+/*从底部进入*/
+
+@keyframes slideInUp {
+   0% {
+      transform: translate3d(0, 100%, 0);
+      visibility: visible;
+   }
+   100% {
+      transform: translate3d(0, 0, 0);
+      visibility: visible;
+   }
+}
+
+/*360度旋转*/
+
+.rotate1 {
+   animation: rotate 10s linear infinite;
+   -webkit-animation: rotate 10s linear infinite;
+}
+
+.rotate2 {
+   animation: rotate 4s linear infinite;
+   -webkit-animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+   from {
+      -webkit-transform: rotate(0deg)
+   }
+   to {
+      -webkit-transform: rotate(360deg)
+   }
+}
+
+@-webkit-keyframes rotate {
+   from {
+      -webkit-transform: rotate(0deg)
+   }
+   to {
+      -webkit-transform: rotate(360deg)
+   }
+}
