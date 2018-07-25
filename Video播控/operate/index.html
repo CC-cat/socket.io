@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CH">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Operate</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link type="text/css" rel="stylesheet" href="css/reset.css">
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="js/socket.io.js"></script>
+        <script src="js/operate.js"></script>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+            }
+
+            body {
+                background: url('images/11.png') no-repeat;
+                background-size: 100% 100%;
+            }
+
+            .ul1 {
+                overflow: hidden;
+                color: #fff;
+            }
+
+            .ul1 li {
+                float: left;
+                width: 200px;
+                height: 200px;
+                margin: 20px;
+                border: 1px solid;
+                padding-top: 72px;
+                text-align: center;
+                cursor: pointer;
+                font-size: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                background: url(images/btn_topNormal.png) no-repeat center;
+                background-size: 144% auto;
+            }
+
+            .showPicInput input {
+                width: 96%;
+                height: 60px;
+                padding: 20px;
+                margin: 2%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!--[if lte IE8]>
+<p class="browserupgrade">您的浏览器版本老的可笑，请到<a href="http://browsehappy.com/">这里</a>更新，以获取最佳的体验</p>
+<![endif]-->
+
+        <div class="showPicInput"><input type="text" name="showIndexPic" placeholder="请输入数字为整数，如：1-51" value="" onchange="btnClick(this.value)"></div>
+
+
+        <ul class="ul1">
+
+            <li onclick="btnClick('index')">首页</li>
+            <!-- <li onclick="btnClick('btnHome')">返回首页</li> -->
+
+            <li onclick="btnClick('pptCN')">切换中文PPT</li>
+            <li onclick="btnClick('pptEN')">切换英文PPT</li>
+
+            <li onclick="btnClick('btnPrev')">ppt上一页</li>
+            <li onclick="btnClick('btnNext')">ppt下一页</li>
+            <li onclick="btnClick('gotoFirst')">ppt回到第一页</li>
+            <li onclick="btnClick('startAutoPlay')">PPT开始自动播放</li>
+            <li onclick="btnClick('stopAutoPlay')">PPT停止自动播放</li>
+
+            <li onclick="btnClick('play')">播放</li>
+            <li onclick="btnClick('pause')">暂停</li>
+            <li onclick="btnClick('stop')">停止</li>
+            <li onclick="btnClick('ahead')">快进</li>
+            <li onclick="btnClick('back')">快退</li>
+
+
+            <li onclick="btnClick('1首页')">video->1首页</li>
+            <li onclick="btnClick('2数据中枢')">video->2数据中枢</li>
+            <li onclick="btnClick('3计算中枢')">video->3计算中枢</li>
+            <li onclick="btnClick('4控制中枢')">video->4控制中枢</li>
+            <li onclick="btnClick('5企业大脑')">video->5企业大脑</li>
+            <li onclick="btnClick('iSoftStone North America')">video->iSoftStone North America</li>
+
+        </ul>
+
+        <input type="range" name="myRange" id="myRange" max="10" min="0" step="1" value="0" onchange="btnClick('volume'+this.value)">
+
+
+
+    </body>
+
+</html>
